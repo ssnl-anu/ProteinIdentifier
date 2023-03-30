@@ -85,7 +85,7 @@ def get_fullres_ml_cols(X):
     return X_fullres, X_ml
     
 if freq == '100k':
-    scanroot = Path(r'ENTER PATH HERE') # 100ksps
+    scanroot = Path(r'ENTER PATH HERE')
 elif freq == '40M':
     scanroot = Path(r"ENTER PATH HERE")
 else:
@@ -186,7 +186,7 @@ def get_main_cluster(dataset):
         last_max_pcorr = max_pcorr
 
     ## Select cluster to retrieve
-    wanted_cluster_idx = 2 # Index of wanted cluster, 0 for largest cluster, 1 for next largest cluster, so on
+    wanted_cluster_idx = 0 # Index of wanted cluster, 0 for largest cluster, 1 for next largest cluster, so on
     ## Retrieve selected cluster
     assert wanted_cluster_idx < n_clusters
     ind = kmeans.labels_ == sorted_clusters[wanted_cluster_idx] 
@@ -210,6 +210,7 @@ def get_main_cluster(dataset):
 
 separated = load_separated_by_meta('signed_voltage', *files)
 
+#Select Voltage Here
 for volt in [0.5]:
     
     tabprint0('Voltage:', volt, tabs=0)

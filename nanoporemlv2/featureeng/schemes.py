@@ -18,7 +18,7 @@ def geometric_features__(signal, sample_period):
 
     height = signal[highest_peak]
     fwhm_, heightatfwhm_, _, _ = sig.peak_widths(signal, [highest_peak], rel_height=0.5)
-    fwhm = fwhm_[0]
+    fwhm = fwhm_[0] * sample_period
     heightatfwhm = heightatfwhm_[0]
 
 
